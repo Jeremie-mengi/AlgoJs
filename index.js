@@ -34,3 +34,20 @@ console.log(transHexadecimal(5));
 // * 'abc' =>  ['ab', 'c_']
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
+function splitPairs(str) {
+    let  result = []
+
+    // Boucle pour parcourir la chaîne par étapes de 2 caractères
+    for (let i=0;i<str.length;i+=2){ 
+  // Si le caractère suivant existe, on prend deux caractères 
+  if (i+1 < str.length) {
+    result.push(str[i]+str[i+1]);
+  }  
+  else{
+    result.push(str[i]+'_');
+  }
+    }
+    return result
+}
+console.log(splitPairs("123456789"));
+
