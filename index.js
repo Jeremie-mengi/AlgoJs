@@ -24,3 +24,13 @@ let transHexadecimal = function (n) {
 }
 console.log(transHexadecimal(5));
 
+// 4. Complétez la solution de manière à diviser la chaîne en paires de deux caractères. 
+// Si la chaîne contient un nombre impair de caractères, 
+// remplacez le deuxième caractère manquant de la dernière paire 
+// par un trait de soulignement ('_').
+
+// Exemples :
+
+// * 'abc' =>  ['ab', 'c_']
+// * 'abcdef' => ['ab', 'cd', 'ef']
+
