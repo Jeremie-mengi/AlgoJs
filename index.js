@@ -73,5 +73,12 @@ function InverseMot(chaine) {
 }
 console.log(InverseMot("This is another test"));
 
+// 6.Ecrire une fonction qui prend une chaîne et renvoie une nouvelle 
+// chaîne avec toutes les voyelles supprimées.
+function RemoveVoyel(str) {
+  return str.replace(/[aeiouyAEIOUY]/g,'')
+}
+console.log(RemoveVoyel("Trolls are bad"));
+
 
 
