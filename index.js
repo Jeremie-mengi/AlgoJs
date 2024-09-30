@@ -78,7 +78,49 @@ console.log(InverseMot("This is another test"));
 function RemoveVoyel(str) {
   return str.replace(/[aeiouyAEIOUY]/g,'')
 }
-console.log(RemoveVoyel("Trolls are bad"));
+console.log(RemoveVoyel("Trolls are badyyy"));
 
 
+// 7. Certains nombres ont des propriétés amusantes. Par exemple :
 
+// 89 --> 8¹ + 9² = 89 * 1
+// 695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2
+// 46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+
+// Étant donné deux entiers positifs net p, nous voulons trouver un entier positif k, 
+// s'il existe, tel que la somme des chiffres de nélevés à des puissances consécutives à partir de psoit égale à k * n.
+
+// En d'autres termes, en écrivant les chiffres consécutifs de ncomme a, b, c, d ..., existe-t-il un entier ktel que :
+
+// ( unp + bp + 1  + cp+ 2 + dp + 3+ ... )= n∗k
+
+// Si c'est le cas nous reviendrons k, sinon nous reviendrons -1.
+
+// Remarque : net pseront toujours des entiers strictement positifs.
+
+// Exemples :
+// n = 89; p = 1 ---> 1 since 8¹ + 9² = 89 = 89 * 1
+
+// n = 92; p = 1 ---> -1 since there is no k such that 9¹ + 2² equals 92 * k
+
+// n = 695; p = 2 ---> 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
+
+// n = 46288; p = 3 ---> 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+
+function digPow(n,p) {
+  //  Convertit le nombre en une 
+  // chaîne de caractères pour accéder aux chiffres
+  const digits = String(n).split('')
+ // Calculer la somme des chiffres élevés à des puissances croissantes
+const sum = digits.reduce((acc,digit,index)=>{
+
+  return acc+Math.pow(Number(digit),p+index);
+}, 0)
+
+  // Vérifier si la somme est un multiple de n
+ const k = sum / n; 
+   // Retourner k si c'est un entier, sinon -1
+   return Number.isInteger(k)?k: -1;
+}
+
+console.log(digPow(46288, 3))
